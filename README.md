@@ -5,7 +5,7 @@ Rendering was done with `piston`.
 
 `// TODO:`
 - [ ] `food` for `snake`
-- [ ] sound effect
+- [ ] sound effect, maybe with [ears](https://docs.rs/crate/ears/latest)
 
 ---
 
