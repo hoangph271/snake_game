@@ -43,7 +43,7 @@ impl Snake {
         correct_next_head(&mut next_head);
 
         if self.heading != Direction::StandBy {
-            self.body.push(next_head.into());
+            self.body.push(next_head);
             self.body.remove(0);
         }
     }
