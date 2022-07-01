@@ -5,7 +5,7 @@ Rendering was done with `piston`.
 
 `// TODO:`
 - [ ] `food` for `snake`
-- [ ] background music, with [rodio](https://docs.rs/rodio)
+- [x] background music, with [rodio](https://docs.rs/rodio)
 
 ---
 
