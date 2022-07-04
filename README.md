@@ -6,6 +6,7 @@ Rendering was done with `piston`.
 `// TODO:`
 - [ ] `food` for `snake`
 - [x] background music, with [rodio](https://docs.rs/rodio)
+- [ ] remove blocking `rodio`
 
 ---
 
