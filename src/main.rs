@@ -54,7 +54,7 @@ fn play_background_music(is_game_ended: Arc<Mutex<bool>>) {
 
         stream_handle.play_raw(source.convert_samples()).unwrap();
         loop {
-            // FIXME: Farmer style coding to keep this thread alive...!
+            // FIXME: Workaround for keeping the background music playing
             if *is_game_ended.lock().unwrap() {
                 break;
             } else {
