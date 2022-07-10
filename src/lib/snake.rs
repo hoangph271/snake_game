@@ -29,7 +29,7 @@ fn correct_next_head(next_head: &mut Point) {
 }
 
 impl Snake {
-    pub fn update(&mut self) {
+    fn next_head(&self) -> Point {
         let snake_head = self.snake_head();
         let mut next_head: Point = match self.heading {
             Direction::Up => (snake_head.x, snake_head.y - 1),
@@ -41,6 +41,11 @@ impl Snake {
         .into();
 
         correct_next_head(&mut next_head);
+
+        next_head
+    }
+    pub fn update(&mut self) {
+        let next_head = self.next_head();
 
         if self.heading != Direction::StandBy {
             self.body.push(next_head);
@@ -66,6 +71,28 @@ impl Snake {
         }
 
         true
+    }
+
+    pub fn snake_collide(&self, point: &Point) -> bool {
+        for body_node in self.snake_body() {
+            if shared::are_coordinates_collide(body_node, point) {
+                return true;
+            }
+        }
+
+        if shared::are_coordinates_collide(point, self.snake_head()) {
+            return true;
+        }
+
+        false
+    }
+
+    pub fn can_eat(&self, food_location: &Point) -> bool {
+        let next_head = self.next_head();
+        shared::are_coordinates_collide(&next_head, &food_location)
+    }
+    pub fn eat(&mut self, point: Point) {
+        self.body.push(point);
     }
 }
 
