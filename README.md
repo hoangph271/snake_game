@@ -7,7 +7,7 @@ Rendering was done with `piston`.
 - [ ] `food` for `snake`
 - [ ] remove blocking `rodio`
 - [ ] package audio files with the binary
-- [ ] BUG: `snake` is now un-killable
+- [x] BUG: `snake` is now un-killable
 - [x] `snake` consumes `food`
 - [x] spawn `food`
 - [x] background music, with [rodio](https://docs.rs/rodio)
