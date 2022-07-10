@@ -37,6 +37,7 @@ fn create_game(open_gl: OpenGL) -> Game {
                 .collect(),
             heading: Direction::StandBy,
         },
+        food: None
     }
 }
 

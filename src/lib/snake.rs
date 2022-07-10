@@ -59,13 +59,28 @@ impl Snake {
     pub fn is_alive(&self) -> bool {
         let head = self.snake_head();
 
+        self.snake_collide(head)
+    }
+
+    pub fn snake_collide(&self, point: &Point) -> bool {
         for body_node in self.snake_body() {
-            if shared::are_coordinates_collide(head, body_node) {
-                return false;
+            if shared::are_coordinates_collide(body_node, point) {
+                return true;
             }
         }
 
-        true
+        if shared::are_coordinates_collide(point, self.snake_head()) {
+            return true;
+        }
+
+        false
+    }
+
+    pub fn can_eat(&self, point: &Point) -> bool {
+        shared::are_coordinates_collide(self.snake_head(), &point)
+    }
+    pub fn eat(&mut self, point: Point) {
+        self.body.push(point);
     }
 }
 

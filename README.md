@@ -5,8 +5,13 @@ Rendering was done with `piston`.
 
 `// TODO:`
 - [ ] `food` for `snake`
-- [ ] sound effect, maybe with [ears](https://docs.rs/crate/ears/latest)
+- [ ] remove blocking `rodio`
+- [ ] package audio files with the binary
+- [ ] BUG: `snake` is now un-killable
+- [x] `snake` consumes `food`
+- [x] spawn `food`
+- [x] background music, with [rodio](https://docs.rs/rodio)
 
 ---
 
-> *It was previously at [useRust/snake_game](https://github.com/hoangph271/useRust/tree/master/snake_game).*
+> *It was previously located at [useRust/snake_game](https://github.com/hoangph271/useRust/tree/master/snake_game).*
