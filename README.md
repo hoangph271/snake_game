@@ -4,7 +4,7 @@ A simple PoC `snake_game` poorly written in Rust.
 Rendering was done with `piston`.
 
 `// TODO:`
-- [ ] `food` for `snake`
+- [x] `food` for `snake`
 - [ ] remove blocking `rodio`
 - [ ] package audio files with the binary
 - [x] BUG: `snake` is now un-killable
