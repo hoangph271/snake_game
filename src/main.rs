@@ -4,6 +4,7 @@ extern crate opengl_graphics;
 extern crate piston;
 extern crate rand;
 
+use std::io::Cursor;
 use std::sync::{Arc, Mutex};
 
 use glutin_window::GlutinWindow;
@@ -44,12 +45,11 @@ fn create_game(open_gl: OpenGL) -> Game {
 
 fn play_background_music(is_game_ended: Arc<Mutex<bool>>) {
     use rodio::{source::Source, Decoder, OutputStream};
-    use std::fs::File;
     use std::io::BufReader;
 
-    if let Ok((_stream, stream_handle)) = OutputStream::try_default() {
-        // let binary = include_bytes!("bin/8_bit_adventure.mp3"); // TODO: Package with the binary
-        let binary = File::open("src/bin/8_bit_adventure.mp3").unwrap();
+    if let Ok((_, stream_handle)) = OutputStream::try_default() {
+        let binary = include_bytes!("bin/8_bit_adventure.mp3").to_vec();
+        let binary = Cursor::new(binary);
         let file = BufReader::new(binary);
         let source = Decoder::new_looped(file).unwrap();
 

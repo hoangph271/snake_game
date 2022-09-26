@@ -6,7 +6,7 @@ Rendering was done with `piston`.
 `// TODO:`
 - [x] `food` for `snake`
 - [ ] remove blocking `rodio`
-- [ ] package audio files with the binary
+- [x] package audio files with the binary
 - [x] BUG: `snake` is now un-killable
 - [x] `snake` consumes `food`
 - [x] spawn `food`
