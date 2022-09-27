@@ -1,10 +1,9 @@
+use rodio::{source::Source, Decoder, OutputStream};
+use std::io::BufReader;
 use std::io::Cursor;
 use std::sync::{Arc, Mutex};
 
 pub fn play_background_music(is_game_ended: Arc<Mutex<bool>>) {
-    use rodio::{source::Source, Decoder, OutputStream};
-    use std::io::BufReader;
-
     if let Ok((_, stream_handle)) = OutputStream::try_default() {
         let binary = include_bytes!("../../bin/8_bit_adventure.mp3").to_vec();
         let binary = Cursor::new(binary);

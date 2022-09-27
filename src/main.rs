@@ -4,20 +4,20 @@ extern crate opengl_graphics;
 extern crate piston;
 extern crate rand;
 
-use std::sync::{Arc, Mutex};
 use glutin_window::GlutinWindow;
 use opengl_graphics::{GlGraphics, OpenGL};
 use piston::{
     window::WindowSettings, ButtonEvent, ButtonState, EventLoop, EventSettings, Events,
     RenderEvent, UpdateEvent,
 };
+use std::sync::{Arc, Mutex};
 
 mod lib;
 
 use lib::game::Game;
+use lib::play_background_music;
 use lib::shared::{Direction, FPS, MAX_X, MAX_Y, PIXEL_SIZE};
 use lib::snake::Snake;
-use lib::play_background_music;
 
 fn create_window(open_gl: OpenGL) -> GlutinWindow {
     WindowSettings::new(
@@ -39,7 +39,7 @@ fn create_game(open_gl: OpenGL) -> Game {
                 .collect(),
             heading: Direction::StandBy,
         },
-        food: None
+        food: None,
     }
 }
 
