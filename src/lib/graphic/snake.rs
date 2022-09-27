@@ -89,7 +89,7 @@ impl Snake {
 
     pub fn can_eat(&self, food_location: &Point) -> bool {
         let next_head = self.next_head();
-        shared::are_coordinates_collide(&next_head, &food_location)
+        shared::are_coordinates_collide(&next_head, food_location)
     }
     pub fn eat(&mut self, point: Point) {
         self.body.push(point);
