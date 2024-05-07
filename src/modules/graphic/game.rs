@@ -3,9 +3,9 @@ use piston::input::*;
 use piston::Button;
 use rand::Rng;
 
-use crate::lib::colors;
-use crate::lib::shared::Direction;
-use crate::lib::snake::Snake;
+use crate::modules::colors;
+use crate::modules::shared::Direction;
+use crate::modules::snake::Snake;
 
 use super::food::Food;
 use super::renderer::Renderer;

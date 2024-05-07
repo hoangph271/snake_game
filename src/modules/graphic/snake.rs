@@ -1,7 +1,7 @@
-use crate::lib::shared::Direction;
+use crate::modules::shared::Direction;
 
-use crate::lib::colors;
-use crate::lib::shared;
+use crate::modules::colors;
+use crate::modules::shared;
 
 use super::renderer::PixelsPack;
 use super::renderer::Renderer;

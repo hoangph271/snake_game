@@ -12,12 +12,12 @@ use piston::{
 };
 use std::sync::{Arc, Mutex};
 
-mod lib;
+mod modules;
 
-use lib::game::Game;
-use lib::play_background_music;
-use lib::shared::{Direction, FPS, MAX_X, MAX_Y, PIXEL_SIZE};
-use lib::snake::Snake;
+use modules::game::Game;
+use modules::play_background_music;
+use modules::shared::{Direction, FPS, MAX_X, MAX_Y, PIXEL_SIZE};
+use modules::snake::Snake;
 
 fn create_window(open_gl: OpenGL) -> GlutinWindow {
     WindowSettings::new(
@@ -33,7 +33,7 @@ fn create_game(open_gl: OpenGL) -> Game {
     Game {
         gl: GlGraphics::new(open_gl),
         snake: Snake {
-            body: vec![(0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (5, 0)]
+            body: [(0, 0), (1, 0), (2, 0), (3, 0), (4, 0), (5, 0)]
                 .iter()
                 .map(|tuple| tuple.into())
                 .collect(),
